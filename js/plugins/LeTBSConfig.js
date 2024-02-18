@@ -202,8 +202,8 @@ Lecode.S_TBS.Config.Projectiles = {
     "bow_arrow": {
         filename: "Arrow",
         adapt_angle: true,
-        speed: 8,
-        trajectory: "curved_jump(150)"
+        speed: 20,
+        trajectory: "curved_jump(100)"
     },
 
     "ghost_arrow": {
@@ -429,6 +429,10 @@ Lecode.S_TBS.Config.Custom_Scopes = {
 
     "ice_prison": {
         data: "[cx-1,cy-1],[cx,cy-1],[cx+1,cy-1],[cx-1,cy],[cx+1,cy],[cx-1,cy+1],[cx,cy+1],[cx+1,cy+1]"
+    },
+
+    "wide_slash":{
+        data: "[cx,cy-1],[cx-1,cy],[cx,cy],[cx+1,cy],[cx,cy+1]"
     }
 
 };
