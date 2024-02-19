@@ -977,7 +977,6 @@ Lecode.S_TBS.Config.Sequences = {
     ],
 
     "rescue": [
-        
         "wait: 60",
         "save_entities: ally_teleport, cursor_battler",
         "request_selection: skill(34)",
@@ -988,7 +987,6 @@ Lecode.S_TBS.Config.Sequences = {
         "anim: saved(ally_teleport), 123",
         "wait: 60",
         "call: post-skill"
-    
     ],
 
     "mana_ball": [
