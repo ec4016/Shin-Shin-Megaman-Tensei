@@ -856,7 +856,19 @@ Lecode.S_TBS.Config.Sequences = {
     "teleportation_sup": [
         "script: user.setDir(user._lastDir);",
         "call: pre-skill",
-        "save_cells: battler_toward_user, battler_pos",
+        "save_cells: cursor_ally, battler_pos",
+        "anim: last_targets, 169",
+        "wait: 40",
+        "move_to_cell: saved(battler_pos), cursor_cell, true",
+        "anim: last_targets, 170",
+        "wait: 60",
+        "call: post-skill"
+    ],
+
+    "warp": [
+        "script: user.setDir(user._lastDir);",
+        "call: pre-skill",
+        "save_cells: cursor_ally, battler_pos",
         "anim: last_targets, 169",
         "wait: 40",
         "move_to_cell: saved(battler_pos), cursor_cell, true",
@@ -951,17 +963,32 @@ Lecode.S_TBS.Config.Sequences = {
         "wait: 60",
     ],
 
-    "ally_teleport": [
+    "warp": [
         "wait: 60",
         "save_entities: ally_teleport, cursor_battler",
-        "request_selection: skill(91)",
+        "request_selection: skill(36)",
         "call: pre-skill",
-        "anim: saved(ally_teleport), 169",
+        "anim: saved(ally_teleport), 122",
         "wait: 40",
         "move_to_cell: saved(ally_teleport), cursor_cell, true",
-        "anim: saved(ally_teleport), 170",
+        "anim: saved(ally_teleport), 123",
         "wait: 60",
         "call: post-skill"
+    ],
+
+    "rescue": [
+        
+        "wait: 60",
+        "save_entities: ally_teleport, cursor_battler",
+        "request_selection: skill(34)",
+        "call: pre-skill",
+        "anim: saved(ally_teleport), 122",
+        "wait: 40",
+        "move_to_cell: saved(ally_teleport), cursor_cell, true",
+        "anim: saved(ally_teleport), 123",
+        "wait: 60",
+        "call: post-skill"
+    
     ],
 
     "mana_ball": [
