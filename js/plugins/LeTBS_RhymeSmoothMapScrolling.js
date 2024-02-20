@@ -35,7 +35,7 @@ Lecode.S_TBS.RhymeSmoothMapScrolling = {};
 //#=============================================================================
 
 BattleManagerTBS.centerCell = function (cell) {
-    $gameMap.scrollTowardsPos(cell.x, cell.y, 4, 90);
+    // $gameMap.scrollTowardsPos(cell.x, cell.y, 4, 90);
 };
 
 Game_Map.prototype.scrollTowardsPos = function(x, y, speed, frames) {
