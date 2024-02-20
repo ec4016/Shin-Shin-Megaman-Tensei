@@ -84,6 +84,20 @@ Lecode.S_TBS.Config.Marks = {
         max: 1,
         duration: [3, "turn_end"]
     },
+    "explosive_mark_enemy": {
+        body_anim: 135,
+        disappearing_anim: 136,
+        size: "square(1)",
+        triggers: {
+            "turn_end": {
+                stop_movement: false,
+                skill_effects: 94,
+                effects_aoe: "circle(0)"
+            }
+        },
+        max: 1,
+        duration: [3, "turn_end"]
+    },
 
     "volcano_cell": {
         body_anim: 150,
@@ -675,6 +689,7 @@ Lecode.S_TBS.Config.Sequences = {
         "play_pose: user, atk",
         "map_effects: {aoe}, current_obj, obj_anim"
     ],
+    
 
     "rush": [
         "wait: 10",
@@ -882,9 +897,26 @@ Lecode.S_TBS.Config.Sequences = {
         "wait: 60",
         "call: post-skill"
     ],
+    "phase": [
+        "call: pre-skill",
+        "anim: user, 126",
+        "wait: 40",
+        "move_to_cell: user, cursor_cell, true",
+        "anim: user, 127",
+        "wait: 60",
+        "call: post-skill"
+    ],
     
 
     "explosive_mark": [
+        "call: pre-skill",
+        "map_anim: cursor_cell, obj_anim",
+        "wait: 20",
+        "mark: explosive_mark, cursor_cell",
+        "wait: 60",
+        "call: post-skill"
+    ],
+    "explosive_mark_enemy": [
         "call: pre-skill",
         "map_anim: cursor_cell, obj_anim",
         "wait: 20",
@@ -986,7 +1018,7 @@ Lecode.S_TBS.Config.Sequences = {
     "rescue": [
         "wait: 60",
         "save_entities: ally_teleport, cursor_battler",
-        "request_selection: skill(34)",
+        "request_selection: skill(42)",
         "call: pre-skill",
         "anim: saved(ally_teleport), 122",
         "wait: 40",
