@@ -71,13 +71,13 @@ Lecode.S_TBS.Config.Tile_Effects = {
 Lecode.S_TBS.Config.Marks = {
 
     "explosive_mark": {
-        body_anim: 174,
-        disappearing_anim: 175,
+        body_anim: 130,
+        disappearing_anim: 131,
         size: "square(1)",
         triggers: {
             "turn_end": {
                 stop_movement: false,
-                skill_effects: 77,
+                skill_effects: 49,
                 effects_aoe: "circle(0)"
             }
         },
@@ -205,9 +205,15 @@ Lecode.S_TBS.Config.Projectiles = {
         speed: 20,
         trajectory: "curved_jump(100)"
     },
+    "snipe": {
+        filename: "Arrow",
+        adapt_angle: true,
+        speed: 40,
+        trajectory: "curved_jump(100)"
+    },
 
     "ghost_arrow": {
-        anim: [172, 36, 16],
+        anim: [128, 36, 16],
         adapt_angle: "to_control_points",
         speed: 12,
         trajectory: "zigzag(40)"
@@ -228,7 +234,7 @@ Lecode.S_TBS.Config.Projectiles = {
     },
 
     "phantom_slash": {
-        anim: [131, 56, 50],
+        anim: [124, 56, 50],
         adapt_angle: true,
         speed: 9,
         trajectory: "line(0)"
@@ -319,10 +325,10 @@ Lecode.S_TBS.Config.Summons = {
     "ice_block": {
         turn_order: "none",
         kind: "enemy",
-        id: 34,
+        id: 10,
         tied_to_caster: false,
         stats: {
-            mhp: "+30%"
+            mhp: "30%"
         }
     },
 
@@ -693,10 +699,10 @@ Lecode.S_TBS.Config.Sequences = {
         "wait: 10",
         "projectile: phantom_slash, user_cell, cursor_cell",
         "effects: {aoe}_battlers, current_obj, 132",
-        "anim: user, 133",
+        "anim: user, 126",
         "wait: 20",
         "reach_target: user, {aoe}_battlers, back, true",
-        "anim: user, 134",
+        "anim: user, 127",
         "look_at: user, cursor_cell",
         "play_pose: user, atk",
         "wait: 10",
@@ -876,6 +882,7 @@ Lecode.S_TBS.Config.Sequences = {
         "wait: 60",
         "call: post-skill"
     ],
+    
 
     "explosive_mark": [
         "call: pre-skill",
@@ -985,6 +992,39 @@ Lecode.S_TBS.Config.Sequences = {
         "wait: 40",
         "move_to_cell: saved(ally_teleport), cursor_cell, true",
         "anim: saved(ally_teleport), 123",
+        "wait: 60",
+        "call: post-skill"
+    ],
+
+    "swap": [
+        "wait: 60",
+        "save_entities: swap1, cursor_battler",
+        "save_cells: swapPos1, cursor_cell",
+        "request_selection: skill(44)",
+        "save_entities: swap2, cursor_battler",
+        "call: pre-skill",
+        "anim: saved(swap1), 122",
+        "wait: 10",
+        "anim: saved(swap2), 122",
+        "wait: 40",
+        "move_to_cell: saved(swap1), cursor_cell, true",
+        "anim: saved(swap1), 123",
+        "wait: 10",
+        "move_to_cell: saved(swap2), saved(swapPos1), true",
+        "anim: saved(swap2), 123",
+        "wait: 60",
+        "call: post-skill"
+    ],
+
+    "capture": [
+        "wait: 60",
+        "save_entities: ally_teleport, cursor_battler",
+        "request_selection: skill(34)",
+        "call: pre-skill",
+        "anim: saved(ally_teleport), 126",
+        "wait: 40",
+        "move_to_cell: saved(ally_teleport), cursor_cell, true",
+        "anim: saved(ally_teleport), 127",
         "wait: 60",
         "call: post-skill"
     ],
