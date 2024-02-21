@@ -342,7 +342,7 @@ Lecode.S_TBS.Config.Summons = {
         id: 10,
         tied_to_caster: false,
         stats: {
-            mhp: "30%"
+            mhp: "5%"
         }
     },
 
