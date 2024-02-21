@@ -1,0 +1,7 @@
+
+
+(function() {
+
+    Graphics._switchStretchMode();
+  
+  })();

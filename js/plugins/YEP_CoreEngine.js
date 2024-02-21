@@ -696,6 +696,7 @@ Yanfly.Core.Bitmap_initialize = Bitmap.prototype.initialize;
 Bitmap.prototype.initialize = function(width, height) {
   Yanfly.Core.Bitmap_initialize.call(this, width, height);
   this.fontFace = Yanfly.Param.DefaultFont;
+  
 };
 
 Yanfly.Core.Bitmap_blt = Bitmap.prototype.blt;
